@@ -172,7 +172,7 @@ runs:
         settings=""
         if ! settings=$(echo "$COMPONENT_CONFIG" | jq -c \
           '{
-            "github-actions-enabled": (.settings.github.actions_enabled // "") | tostring,
+            "github-actions-enabled": (.settings.github.actions_enabled // "true") | tostring,
             "atmos-pro-enabled": (.settings.pro.enabled // "") | tostring,
             "component-path": (.component_info.component_path // "") | tostring,
             "base-path": (.atmos_cli_config.base_path // "") | tostring,
